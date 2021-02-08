@@ -6,10 +6,15 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body { 
+        padding-top: 4rem;
         margin: 0;
         color: #333;
         --type-first: Helvetica, Arial, sans-serif;
         --type-second: 'Spectral', Georgia;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     h1,
