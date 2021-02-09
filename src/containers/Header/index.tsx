@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import * as GS from "styles";
 import * as S from "./style";
 import { ReactComponent as Dogs } from "assets/dogs.svg";
+import { UserContext } from "state/UserContext";
+import { useContext } from "react";
 function Header() {
+  const context = useContext(UserContext);
   return (
     <S.Header>
       <GS.Container>
@@ -12,10 +15,17 @@ function Header() {
               <Dogs />
             </S.Logo>
           </Link>
-          <Link to="/login">
-            <S.Login>Login / Criar</S.Login>
-          </Link>
+          {context?.data ? (
+            <Link to="/conta">
+              <S.Login>{context.data.nome}</S.Login>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <S.Login>Login / Criar</S.Login>
+            </Link>
+          )}
         </S.Nav>
+        <button onClick={context?.userLogout}>Sair</button>
       </GS.Container>
     </S.Header>
   );

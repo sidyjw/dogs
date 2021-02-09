@@ -1,17 +1,27 @@
+import Input from "types/components/Input";
 import * as S from "./styles";
 
-interface Input {
-  label: string;
-  type?: string | undefined | null;
-  name: string;
-}
-
-function InputField({ label, type, name }: Input) {
+function InputField({
+  label,
+  type,
+  name,
+  value,
+  error,
+  onChange,
+  onBlur,
+}: Input) {
   return (
     <S.Wrapper>
       <S.Label htmlFor={name}>{label}</S.Label>
-      <S.InputField id={name} type={type ?? "text"} name={name} />
-      <S.ErrorText>Erro</S.ErrorText>
+      <S.InputField
+        id={name}
+        type={type ?? "text"}
+        name={name}
+        onChange={onChange}
+        onBlur={onBlur}
+        value={value}
+      />
+      {error && <S.ErrorText>{error}</S.ErrorText>}
     </S.Wrapper>
   );
 }
