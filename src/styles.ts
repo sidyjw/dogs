@@ -1,6 +1,6 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`    
     * {
         box-sizing: border-box;
     }
@@ -10,11 +10,12 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         color: #333;
         --type-first: Helvetica, Arial, sans-serif;
-        --type-second: 'Spectral', Georgia;
+        --type-second: 'Spectral', georgia;
     }
 
     a {
         text-decoration: none;
+        color: #333;
     }
 
     h1,
@@ -50,4 +51,17 @@ export const Container = styled.div`
   max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
+`;
+
+const animeLeft = keyframes`
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+`;
+
+export const AnimeLeft = styled.div`
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: ${animeLeft} 0.3s forwards;
 `;
