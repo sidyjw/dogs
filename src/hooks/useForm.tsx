@@ -6,8 +6,9 @@ const types = {
     message: "Digite um email válido.",
   },
   password: {
-    regex: /\S+@\S+\.\S+/,
-    message: "Insira uma senha.",
+    regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+    message:
+      "A senha precisa ter 1 caracter maísculo, 1 minúsculo e 1 digito. Com no mínio 8 caracteres.",
   },
 };
 

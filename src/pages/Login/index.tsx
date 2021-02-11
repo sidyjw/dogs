@@ -5,12 +5,12 @@ import LoginPasswordReset from "containers/LoginPasswordReset";
 import React, { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { UserContext } from "state/UserContext";
-
+import * as S from "./styles";
 function Login() {
   const context = useContext(UserContext);
 
   return (
-    <div>
+    <S.FormWrapper>
       {context?.login ? (
         <Navigate to="/conta" />
       ) : (
@@ -21,7 +21,7 @@ function Login() {
           <Route path="resetar" element={<LoginPasswordReset />} />
         </Routes>
       )}
-    </div>
+    </S.FormWrapper>
   );
 }
 
