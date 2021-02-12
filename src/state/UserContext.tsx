@@ -69,7 +69,7 @@ export function UserStorage({
       setData(null);
       setError(null);
       setLoading(false);
-      setLoading(false);
+      setLogin(false);
 
       window.localStorage.removeItem("token");
       navigate("/login");
