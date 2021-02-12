@@ -100,6 +100,8 @@ export function UserStorage({
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
     autoLogin();

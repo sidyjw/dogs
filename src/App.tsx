@@ -6,6 +6,8 @@ import Login from "pages/Login";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserStorage } from "state/UserContext";
+import User from "pages/User";
+import ProtectedRoute from "components/ProtectedRoute";
 
 const App = () => {
   return (
@@ -16,7 +18,8 @@ const App = () => {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login/*" element={<Login />} />
+            <Route path="login/*" element={<Login />} />
+            <ProtectedRoute path="conta/*" element={<User />} />
           </Routes>
           <Footer />
         </UserStorage>
