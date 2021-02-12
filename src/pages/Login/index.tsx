@@ -10,18 +10,20 @@ function Login() {
   const context = useContext(UserContext);
 
   return (
-    <S.FormWrapper>
-      {context?.login ? (
-        <Navigate to="/conta" />
-      ) : (
-        <Routes>
-          <Route path="/" element={<LoginForm />} />
-          <Route path="criar" element={<LoginCreate />} />
-          <Route path="perdeu" element={<LoginPasswordLost />} />
-          <Route path="resetar" element={<LoginPasswordReset />} />
-        </Routes>
-      )}
-    </S.FormWrapper>
+    <S.LoginPage>
+      <S.FormWrapper>
+        {context?.login ? (
+          <Navigate to="/conta" />
+        ) : (
+          <Routes>
+            <Route path="/" element={<LoginForm />} />
+            <Route path="criar" element={<LoginCreate />} />
+            <Route path="perdeu" element={<LoginPasswordLost />} />
+            <Route path="resetar" element={<LoginPasswordReset />} />
+          </Routes>
+        )}
+      </S.FormWrapper>
+    </S.LoginPage>
   );
 }
 
