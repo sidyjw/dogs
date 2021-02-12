@@ -37,7 +37,7 @@ export function UserStorage({
     const response = await fetch(url, options);
     const json = await response.json();
     setData(json);
-    setLoading(true);
+    setLogin(true);
   }
 
   async function userLogin(username: string, password: string) {
