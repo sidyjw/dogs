@@ -13,7 +13,6 @@ function LoginForm() {
   const username = useForm();
   const password = useForm();
   const context = useContext(UserContext);
-
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
