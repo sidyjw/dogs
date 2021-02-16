@@ -6,8 +6,10 @@ import useFetch from "hooks/useFetch";
 import { useEffect } from "react";
 import { AnimeLeft } from "styles";
 import { PhotoData } from "types/components/FeedPhotosItem";
+import { IModalPhoto } from "types/components/ModalPhoto";
 import * as S from "./styles";
-function FeedPhotos() {
+
+function FeedPhotos({ setModalPhoto }: IModalPhoto) {
   const { data, error, loading, request } = useFetch<PhotoData[]>();
 
   useEffect(() => {
@@ -18,7 +20,7 @@ function FeedPhotos() {
     }
 
     fetchPhotos();
-  }, []);
+  }, [request]);
 
   if (error) return <ErrorMessage error={error} />;
 
@@ -28,7 +30,11 @@ function FeedPhotos() {
     <AnimeLeft>
       <S.FeedPhotos>
         {data?.map((photo) => (
-          <FeedPhotosItem photo={photo} key={photo.id} />
+          <FeedPhotosItem
+            photo={photo}
+            key={photo.id}
+            setModalPhoto={setModalPhoto}
+          />
         ))}
       </S.FeedPhotos>
     </AnimeLeft>
