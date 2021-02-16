@@ -4,11 +4,18 @@ import Loading from "components/Loading";
 import PhotoContent from "containers/PhotoContent";
 import useFetch from "hooks/useFetch";
 import { useEffect } from "react";
+import { ScaleUp } from "styles";
 import { PhotoData } from "types/components/FeedPhotosItem";
-import { SinglePhotoData } from "types/components/ModalPhoto";
+import { IModalPhoto, SinglePhotoData } from "types/components/ModalPhoto";
 import * as S from "./styles";
 
-function FeedModal({ photo }: { photo: PhotoData }) {
+function FeedModal({
+  photo,
+  setModalPhoto,
+}: {
+  photo: PhotoData;
+  setModalPhoto: IModalPhoto["setModalPhoto"];
+}) {
   const { data, error, loading, request } = useFetch<SinglePhotoData>();
 
   useEffect(() => {
@@ -16,8 +23,14 @@ function FeedModal({ photo }: { photo: PhotoData }) {
     request(url, options);
   }, [photo.id, request]);
 
+  function handleOutsideClick(
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) {
+    if (event.target === event.currentTarget) setModalPhoto(null);
+  }
+
   return (
-    <S.FeedModal>
+    <S.FeedModal onClick={handleOutsideClick}>
       {error && <ErrorMessage error={error} />}
       {loading && <Loading />}
       {data && <PhotoContent data={data} />}

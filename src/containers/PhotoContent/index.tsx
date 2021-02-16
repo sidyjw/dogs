@@ -13,10 +13,10 @@ function PhotoContent({ data }: { data: SinglePhotoData }) {
       </S.PhotoImg>
       <S.PhotoDetails>
         <div>
-          <p>
+          <S.PhotoAuthor>
             <Link to={`/perfil/${photo.id}`}>@{photo.author}</Link>
             <S.PhotoViews>{photo.acessos}</S.PhotoViews>
-          </p>
+          </S.PhotoAuthor>
           <Title>
             <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
           </Title>

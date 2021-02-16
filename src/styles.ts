@@ -69,3 +69,16 @@ export const AnimeLeft = styled.div`
   transform: translateX(-20px);
   animation: ${animeLeft} 0.3s forwards;
 `;
+
+const scaleUp = keyframes`
+    to {
+        opacity: initial;
+        transform: initial;
+    }   
+`;
+
+export const ScaleUp = styled.div`
+  opacity: 0;
+  transform: scale(0.8);
+  animation: ${scaleUp} 0.3s forwards;
+`;
