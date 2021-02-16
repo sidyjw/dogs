@@ -53,6 +53,10 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
+export const MainContainer = styled.div`
+  margin-top: 4rem;
+`;
+
 const animeLeft = keyframes`
     to {
         opacity: 1;

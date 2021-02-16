@@ -66,3 +66,18 @@ export function PHOTO_POST(formData: FormData, token: string) {
     },
   };
 }
+
+interface IPHOTOS_GET {
+  page: number;
+  total: number;
+  user: number;
+}
+export function PHOTOS_GET({ page, total, user }: IPHOTOS_GET) {
+  return {
+    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    options: {
+      method: "GET",
+      cache: "no-store" as "no-store",
+    },
+  };
+}
