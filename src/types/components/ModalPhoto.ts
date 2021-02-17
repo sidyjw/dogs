@@ -6,5 +6,11 @@ export interface IModalPhoto {
 
 export interface SinglePhotoData {
   photo: PhotoData;
-  comments: [];
+  comments: CommentData[];
+}
+
+export interface CommentData {
+  comment_ID: number;
+  comment_author: string;
+  comment_content: string;
 }
