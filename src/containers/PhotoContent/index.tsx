@@ -1,10 +1,14 @@
 import PhotoComments from "components/PhotoComments";
+import PhotoDelete from "components/PhotoDelete";
 import { Title } from "components/Title";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "state/UserContext";
 import { SinglePhotoData } from "types/components/ModalPhoto";
 import * as S from "./styles";
 
 function PhotoContent({ data }: { data: SinglePhotoData }) {
+  const context = useContext(UserContext);
   const { photo, comments } = data;
   return (
     <S.PhotoContent>
@@ -14,7 +18,11 @@ function PhotoContent({ data }: { data: SinglePhotoData }) {
       <S.PhotoDetails>
         <div>
           <S.PhotoAuthor>
-            <Link to={`/perfil/${photo.id}`}>@{photo.author}</Link>
+            {context?.data?.username === photo.author ? (
+              <PhotoDelete id={photo.id} />
+            ) : (
+              <Link to={`/perfil/${photo.id}`}>@{photo.author}</Link>
+            )}
             <S.PhotoViews>{photo.acessos}</S.PhotoViews>
           </S.PhotoAuthor>
           <Title>
