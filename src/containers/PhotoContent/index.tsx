@@ -1,3 +1,4 @@
+import Image from "components/Image";
 import PhotoComments from "components/PhotoComments";
 import PhotoDelete from "components/PhotoDelete";
 import { Title } from "components/Title";
@@ -13,7 +14,7 @@ function PhotoContent({ data }: { data: SinglePhotoData }) {
   return (
     <S.PhotoContent>
       <S.PhotoImg>
-        <img src={photo.src} alt={photo.title} />
+        <Image src={photo.src} alt={photo.title} />
       </S.PhotoImg>
       <S.PhotoDetails>
         <div>

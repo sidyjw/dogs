@@ -4,7 +4,6 @@ import Loading from "components/Loading";
 import PhotoContent from "containers/PhotoContent";
 import useFetch from "hooks/useFetch";
 import { useEffect } from "react";
-import { ScaleUp } from "styles";
 import { PhotoData } from "types/components/FeedPhotosItem";
 import { IModalPhoto, SinglePhotoData } from "types/components/ModalPhoto";
 import * as S from "./styles";
