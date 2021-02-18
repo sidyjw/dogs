@@ -1,5 +1,5 @@
 import PhotoCommentsForm from "components/PhotoCommentsForm";
-import { ReactElement, useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "state/UserContext";
 import { SinglePhotoData } from "types/components/ModalPhoto";
 import * as S from "./styles";
