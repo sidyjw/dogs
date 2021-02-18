@@ -24,7 +24,6 @@ function Header() {
               <S.Login>Login / Criar</S.Login>
             </Link>
           )}
-          <button onClick={context?.userLogout}>Sair</button>
         </S.Nav>
       </GS.Container>
     </S.Header>

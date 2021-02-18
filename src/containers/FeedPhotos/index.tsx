@@ -6,21 +6,25 @@ import useFetch from "hooks/useFetch";
 import { useEffect } from "react";
 import { AnimeLeft } from "styles";
 import { PhotoData } from "types/components/FeedPhotosItem";
-import { IModalPhoto } from "types/components/ModalPhoto";
+import { IFeedPhotos } from "types/FeedPhotos";
 import * as S from "./styles";
 
-function FeedPhotos({ setModalPhoto }: IModalPhoto) {
+function FeedPhotos({ setModalPhoto, user, page, setInfinite }: IFeedPhotos) {
   const { data, error, loading, request } = useFetch<PhotoData[]>();
 
   useEffect(() => {
+    const total = 3;
     async function fetchPhotos() {
-      const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 });
-      const { json } = await request(url, options);
-      console.log(json);
+      const { url, options } = PHOTOS_GET({ page, total, user });
+      const { json, response } = await request(url, options);
+
+      if (response && response.ok && json.length < total) {
+        setInfinite(false);
+      }
     }
 
     fetchPhotos();
-  }, [request]);
+  }, [request, user, page, setInfinite]);
 
   if (error) return <ErrorMessage error={error} />;
 

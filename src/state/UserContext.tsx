@@ -1,13 +1,7 @@
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from "api";
 import { createContext, useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-interface UserData {
-  id: number;
-  username: string;
-  nome: string;
-  email: string;
-}
+import { UserData } from "types/components/UserContext";
 
 interface UserContextGlobal {
   userLogin: (username: string, password: string) => void;

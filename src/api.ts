@@ -68,9 +68,9 @@ export function PHOTO_POST(formData: FormData, token: string) {
 }
 
 interface IPHOTOS_GET {
-  page: number;
+  user?: number;
+  page?: number;
   total: number;
-  user: number;
 }
 export function PHOTOS_GET({ page, total, user }: IPHOTOS_GET) {
   return {
