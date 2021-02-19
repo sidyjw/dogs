@@ -20,16 +20,18 @@ const App = () => {
         <UserStorage>
           <Header />
           <Container>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="login/*" element={<Login />} />
-              <ProtectedRoute path="conta/*" element={<User />} />
-              <Route path="foto/:id" element={<Photo />} />
-              <Route path="perfil/:user" element={<UserProfile />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Footer />
+            <S.Main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="login/*" element={<Login />} />
+                <ProtectedRoute path="conta/*" element={<User />} />
+                <Route path="foto/:id" element={<Photo />} />
+                <Route path="perfil/:user" element={<UserProfile />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </S.Main>
           </Container>
+          <Footer />
         </UserStorage>
       </BrowserRouter>
     </div>

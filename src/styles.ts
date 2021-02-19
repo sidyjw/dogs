@@ -82,3 +82,7 @@ export const ScaleUp = styled.div`
   transform: scale(0.8);
   animation: ${scaleUp} 0.3s forwards;
 `;
+
+export const Main = styled.main`
+  min-height: calc(100vh + 10rem);
+`;
