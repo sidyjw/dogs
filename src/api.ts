@@ -1,4 +1,5 @@
-export const API_URL = "https://dogsapi.origamid.dev/json";
+export const API_URL =
+  process.env.REACT_APP_URL || "https://dogsapi.origamid.dev/json";
 
 export function TOKEN_POST(body: { username: string; password: string }) {
   return {
@@ -144,6 +145,18 @@ export function PASSWORD_RESET(body: {
         Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
       body: JSON.stringify(body),
+    },
+  };
+}
+
+export function STATS_GET() {
+  return {
+    url: API_URL + "/api/stats",
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
     },
   };
 }
