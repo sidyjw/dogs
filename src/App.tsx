@@ -11,6 +11,7 @@ import ProtectedRoute from "components/ProtectedRoute";
 import { Container } from "styles";
 import Photo from "pages/Photo";
 import UserProfile from "pages/UserProfile";
+import NotFound from "pages/NotFound";
 const App = () => {
   return (
     <div>
@@ -25,6 +26,7 @@ const App = () => {
               <ProtectedRoute path="conta/*" element={<User />} />
               <Route path="foto/:id" element={<Photo />} />
               <Route path="perfil/:user" element={<UserProfile />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
           </Container>

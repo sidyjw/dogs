@@ -2,6 +2,7 @@ import Feed from "containers/Feed";
 import UserHeader from "containers/UserHeader";
 import UserPhotoPost from "containers/UserPhotoPost";
 import UserStats from "containers/UserStats";
+import NotFound from "pages/NotFound";
 import React, { useContext } from "react";
 import { Routes, Route } from "react-router";
 import { UserContext } from "state/UserContext";
@@ -18,6 +19,7 @@ function User() {
         />
         <Route path="postar" element={<UserPhotoPost />} />
         <Route path="estatisticas" element={<UserStats />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </S.UserPage>
   );
