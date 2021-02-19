@@ -1,5 +1,5 @@
 export const API_URL =
-  process.env.REACT_APP_URL || "https://dogsapi.origamid.dev/json";
+  process.env.REACT_APP_API_URL || "https://dogsapi.origamid.dev/json";
 
 export function TOKEN_POST(body: { username: string; password: string }) {
   return {
