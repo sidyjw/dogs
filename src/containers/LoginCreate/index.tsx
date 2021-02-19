@@ -2,6 +2,7 @@ import { USER_POST } from "api";
 import ErrorMessage from "components/ErrorMessage";
 import Button from "components/Form/Button";
 import InputField from "components/Form/Input";
+import Head from "components/Head";
 import { Title } from "components/Title";
 import useFetch from "hooks/useFetch";
 import useForm from "hooks/useForm";
@@ -36,6 +37,7 @@ function LoginCreate() {
   return (
     <AnimeLeft>
       <section>
+        <Head title="Criar Conta" />
         <Title>Cadastre-se</Title>
         <form onSubmit={handleSubmit}>
           <InputField label="Usuário" name="username" {...username} />

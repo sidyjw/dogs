@@ -1,5 +1,6 @@
 import { PHOTO_GET } from "api";
 import ErrorMessage from "components/ErrorMessage";
+import Head from "components/Head";
 import Loading from "components/Loading";
 import PhotoContent from "containers/PhotoContent";
 import useFetch from "hooks/useFetch";
@@ -22,6 +23,7 @@ function Photo() {
   if (data)
     return (
       <Container>
+        <Head title={data.photo.title} />
         <MainContainer>
           <section>
             <PhotoContent single data={data} />

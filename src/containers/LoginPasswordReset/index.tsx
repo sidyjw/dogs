@@ -2,6 +2,7 @@ import { PASSWORD_RESET } from "api";
 import ErrorMessage from "components/ErrorMessage";
 import Button from "components/Form/Button";
 import InputField from "components/Form/Input";
+import Head from "components/Head";
 import { Title } from "components/Title";
 import useFetch from "hooks/useFetch";
 import useForm from "hooks/useForm";
@@ -41,6 +42,7 @@ function LoginPasswordReset() {
 
   return (
     <div>
+      <Head title="Resete a senha" />
       <Title>Reseta a senha</Title>
       <form onSubmit={handleSubmit}>
         <InputField label="Nova senha" name="password" {...password} />

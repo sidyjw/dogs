@@ -9,6 +9,7 @@ import ErrorMessage from "components/ErrorMessage";
 import { Link } from "react-router-dom";
 import { Title } from "components/Title";
 import { Subtitle } from "components/Subtitle";
+import Head from "components/Head";
 function LoginForm() {
   const username = useForm();
   const password = useForm();
@@ -24,6 +25,7 @@ function LoginForm() {
   return (
     <AnimeLeft>
       <S.Section>
+        <Head title="Login" />
         <Title>Login</Title>
         <S.Form onSubmit={handleSubmit}>
           <Input label="Usuário" name="username" {...username} />

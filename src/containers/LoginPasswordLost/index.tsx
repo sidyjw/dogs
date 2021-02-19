@@ -2,6 +2,7 @@ import { PASSWORD_LOST } from "api";
 import ErrorMessage from "components/ErrorMessage";
 import Button from "components/Form/Button";
 import InputField from "components/Form/Input";
+import Head from "components/Head";
 import { Title } from "components/Title";
 import useFetch from "hooks/useFetch";
 import useForm from "hooks/useForm";
@@ -26,6 +27,7 @@ function LoginPasswordLost() {
 
   return (
     <section>
+      <Head title="Perdeu a senha?" />
       <Title>Perdeu a senha?</Title>
       {data ? (
         <p style={{ color: "#4c1" }}>{data}</p>

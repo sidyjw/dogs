@@ -8,6 +8,7 @@ import { PHOTO_POST } from "api";
 import Button from "components/Form/Button";
 import ErrorMessage from "components/ErrorMessage";
 import { useNavigate } from "react-router";
+import Head from "components/Head";
 interface ImgFile {
   raw: Blob | null;
   preview: string;
@@ -52,6 +53,7 @@ function UserPhotoPost() {
   return (
     <AnimeLeft>
       <S.UserPhotoPost>
+        <Head title="Post sua foto" />
         <form onSubmit={handleSubmit}>
           <InputField label="Nome" name="nome" {...nome} />
           <InputField label="Peso" type="number" name="peso" {...peso} />

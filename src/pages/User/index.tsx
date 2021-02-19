@@ -1,3 +1,4 @@
+import Head from "components/Head";
 import Feed from "containers/Feed";
 import UserHeader from "containers/UserHeader";
 import UserPhotoPost from "containers/UserPhotoPost";
@@ -11,6 +12,7 @@ function User() {
   const context = useContext(UserContext);
   return (
     <S.UserPage>
+      <Head title="Minha conta" />
       <UserHeader />
       <Routes>
         <Route
