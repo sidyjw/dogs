@@ -3,7 +3,7 @@ import FeedPhotos from "containers/FeedPhotos";
 import { useEffect, useState } from "react";
 import { PhotoData } from "types/components/FeedPhotosItem";
 
-function Feed({ user }: { user?: number }) {
+function Feed({ user }: { user?: number | string }) {
   const [modalPhoto, setModalPhoto] = useState<PhotoData | null>(null);
   const [pages, setPages] = useState([1]);
   const [infinite, setInfinite] = useState(true);
@@ -41,6 +41,7 @@ function Feed({ user }: { user?: number }) {
       )}
       {pages.map((page) => (
         <FeedPhotos
+          key={page}
           user={user}
           page={page}
           setInfinite={setInfinite}
