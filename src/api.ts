@@ -117,3 +117,16 @@ export function PHOTO_DELETE(id: number) {
     },
   };
 }
+
+export function PASSWORD_LOST(body: { login: string; url: string }) {
+  return {
+    url: API_URL + "/api/password/lost",
+    options: {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
