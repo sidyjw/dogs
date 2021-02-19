@@ -7,9 +7,11 @@ import { CommentData } from "types/components/ModalPhoto";
 import ErrorMessage from "components/ErrorMessage";
 function PhotoCommentsForm({
   id,
+  single,
   setCommentsList,
 }: {
   id: number;
+  single?: boolean;
   setCommentsList: React.Dispatch<React.SetStateAction<CommentData[]>>;
 }) {
   const [comment, setComment] = useState("");
@@ -27,7 +29,7 @@ function PhotoCommentsForm({
   }
 
   return (
-    <S.PhotoCommentsForm onSubmit={handleSubmit}>
+    <S.PhotoCommentsForm single={single} onSubmit={handleSubmit}>
       <S.PhotoCommentTextArea
         id="comment"
         name="comment"

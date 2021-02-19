@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const PhotoContent = styled.div`
+export const PhotoContent = styled.div<{ single?: boolean }>`
   margin: auto;
   height: 36rem;
   border-radius: 0.2rem;
@@ -16,18 +16,38 @@ export const PhotoContent = styled.div`
     overflow-y: auto;
     grid-template-columns: minmax(20rem, 40rem);
   }
+
+  ${(props) =>
+    props.single &&
+    css`
+      grid-template-columns: 1fr;
+      height: auto;
+    `}
 `;
 
-export const PhotoImg = styled.div`
+export const PhotoImg = styled.div<{ single?: boolean }>`
   grid-row: 1 / 4;
+
+  ${(props) =>
+    props.single &&
+    css`
+      grid-row: 1;
+      border-radius: 0.4rem;
+      overflow: hidden;
+    `}
 
   @media (max-width: 64rem) {
     grid-row: 1;
   }
 `;
 
-export const PhotoDetails = styled.div`
+export const PhotoDetails = styled.div<{ single?: boolean }>`
   padding: 2rem 2rem 0 2rem;
+  ${(props) =>
+    props.single &&
+    css`
+      padding: 1rem 0 0 0;
+    `}
 `;
 
 export const PhotoViews = styled.span`

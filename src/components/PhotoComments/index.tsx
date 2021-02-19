@@ -6,10 +6,12 @@ import * as S from "./styles";
 
 function PhotoComments({
   id,
+  single,
   comments,
 }: {
   id: number;
   comments: SinglePhotoData["comments"];
+  single?: boolean;
 }) {
   const context = useContext(UserContext);
   const [commentsList, setCommentsList] = useState(() => comments);
@@ -23,7 +25,7 @@ function PhotoComments({
 
   return (
     <>
-      <S.Comment ref={refComments}>
+      <S.Comment single={single} ref={refComments}>
         {commentsList.map((comment) => (
           <li key={comment.comment_ID}>
             <b>{comment.comment_author}: </b>
@@ -32,7 +34,11 @@ function PhotoComments({
         ))}
       </S.Comment>
       {context?.login && (
-        <PhotoCommentsForm id={id} setCommentsList={setCommentsList} />
+        <PhotoCommentsForm
+          id={id}
+          single={single}
+          setCommentsList={setCommentsList}
+        />
       )}
     </>
   );

@@ -8,15 +8,21 @@ import { UserContext } from "state/UserContext";
 import { SinglePhotoData } from "types/components/ModalPhoto";
 import * as S from "./styles";
 
-function PhotoContent({ data }: { data: SinglePhotoData }) {
+function PhotoContent({
+  data,
+  single,
+}: {
+  data: SinglePhotoData;
+  single?: boolean;
+}) {
   const context = useContext(UserContext);
   const { photo, comments } = data;
   return (
-    <S.PhotoContent>
-      <S.PhotoImg>
+    <S.PhotoContent single={single}>
+      <S.PhotoImg single={single}>
         <Image src={photo.src} alt={photo.title} />
       </S.PhotoImg>
-      <S.PhotoDetails>
+      <S.PhotoDetails single={single}>
         <div>
           <S.PhotoAuthor>
             {context?.data?.username === photo.author ? (
@@ -35,7 +41,7 @@ function PhotoContent({ data }: { data: SinglePhotoData }) {
           </S.PhotoAttributes>
         </div>
       </S.PhotoDetails>
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoComments id={photo.id} comments={comments} single={single} />
     </S.PhotoContent>
   );
 }

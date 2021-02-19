@@ -1,10 +1,15 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
-export const PhotoCommentsForm = styled.form`
+export const PhotoCommentsForm = styled.form<{ single?: boolean }>`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: stretch;
   margin: 1rem;
+  ${(props) =>
+    props.single &&
+    css`
+      margin: 1rem 0;
+    `}
 `;
 
 export const PhotoCommentTextArea = styled.textarea`
