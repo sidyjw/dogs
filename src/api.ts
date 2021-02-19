@@ -130,3 +130,20 @@ export function PASSWORD_LOST(body: { login: string; url: string }) {
     },
   };
 }
+
+export function PASSWORD_RESET(body: {
+  login: string;
+  key: string;
+  password: string;
+}) {
+  return {
+    url: API_URL + "/api/password/reset",
+    options: {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
