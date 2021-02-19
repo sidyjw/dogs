@@ -28,7 +28,7 @@ function PhotoContent({
             {context?.data?.username === photo.author ? (
               <PhotoDelete id={photo.id} />
             ) : (
-              <Link to={`/perfil/${photo.id}`}>@{photo.author}</Link>
+              <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             )}
             <S.PhotoViews>{photo.acessos}</S.PhotoViews>
           </S.PhotoAuthor>

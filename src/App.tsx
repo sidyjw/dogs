@@ -10,6 +10,7 @@ import User from "pages/User";
 import ProtectedRoute from "components/ProtectedRoute";
 import { Container } from "styles";
 import Photo from "pages/Photo";
+import UserProfile from "pages/UserProfile";
 const App = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const App = () => {
               <Route path="login/*" element={<Login />} />
               <ProtectedRoute path="conta/*" element={<User />} />
               <Route path="foto/:id" element={<Photo />} />
+              <Route path="perfil/:user" element={<UserProfile />} />
             </Routes>
             <Footer />
           </Container>
