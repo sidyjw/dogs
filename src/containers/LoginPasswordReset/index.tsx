@@ -8,6 +8,7 @@ import useFetch from "hooks/useFetch";
 import useForm from "hooks/useForm";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AnimeLeft } from "styles";
 
 function LoginPasswordReset() {
   const [login, setLogin] = useState("");
@@ -41,19 +42,21 @@ function LoginPasswordReset() {
   }
 
   return (
-    <div>
-      <Head title="Resete a senha" />
-      <Title>Reseta a senha</Title>
-      <form onSubmit={handleSubmit}>
-        <InputField label="Nova senha" name="password" {...password} />
-        {loading ? (
-          <Button disabled>Resetando...</Button>
-        ) : (
-          <Button>Resetar</Button>
-        )}
-      </form>
-      <ErrorMessage error={error} />
-    </div>
+    <AnimeLeft>
+      <section>
+        <Head title="Resete a senha" />
+        <Title>Reseta a senha</Title>
+        <form onSubmit={handleSubmit}>
+          <InputField label="Nova senha" name="password" {...password} />
+          {loading ? (
+            <Button disabled>Resetando...</Button>
+          ) : (
+            <Button>Resetar</Button>
+          )}
+        </form>
+        <ErrorMessage error={error} />
+      </section>
+    </AnimeLeft>
   );
 }
 

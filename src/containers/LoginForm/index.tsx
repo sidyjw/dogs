@@ -37,7 +37,7 @@ function LoginForm() {
             <Button>Entrar</Button>
           )}
 
-          {context?.error && <ErrorMessage error={context.error} />}
+          {context?.error && <ErrorMessage error={"Dados incorretos."} />}
         </S.Form>
         <S.LostPasswordLink>
           <Link to="/login/perdeu">Perdeu a Senha?</Link>

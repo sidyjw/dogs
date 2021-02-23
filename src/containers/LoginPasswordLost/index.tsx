@@ -6,6 +6,7 @@ import Head from "components/Head";
 import { Title } from "components/Title";
 import useFetch from "hooks/useFetch";
 import useForm from "hooks/useForm";
+import { AnimeLeft } from "styles";
 
 function LoginPasswordLost() {
   const login = useForm();
@@ -26,28 +27,30 @@ function LoginPasswordLost() {
   }
 
   return (
-    <section>
-      <Head title="Perdeu a senha?" />
-      <Title>Perdeu a senha?</Title>
-      {data ? (
-        <p style={{ color: "#4c1" }}>{data}</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <InputField
-            label="Email / Usuário"
-            type="text"
-            name="email"
-            {...login}
-          />
-          {loading ? (
-            <Button disabled>Enviando...</Button>
-          ) : (
-            <Button>Enviar Email</Button>
-          )}
-        </form>
-      )}
-      <ErrorMessage error={error} />
-    </section>
+    <AnimeLeft>
+      <section>
+        <Head title="Perdeu a senha?" />
+        <Title>Perdeu a senha?</Title>
+        {data ? (
+          <p style={{ color: "#4c1" }}>{data}</p>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <InputField
+              label="Email / Usuário"
+              type="text"
+              name="email"
+              {...login}
+            />
+            {loading ? (
+              <Button disabled>Enviando...</Button>
+            ) : (
+              <Button>Enviar Email</Button>
+            )}
+          </form>
+        )}
+        <ErrorMessage error={error} />
+      </section>
+    </AnimeLeft>
   );
 }
 
