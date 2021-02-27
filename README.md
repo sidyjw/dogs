@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Dogs - Rede social para cachorros
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[  ![react](https://github.com/aleen42/badges/raw/master/src/react.svg)](https://reactjs.org/) [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)  [![react-router](https://aleen42.github.io/badges/src/router.svg)](https://reactrouter.com/) [![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
+](https://www.typescriptlang.org/)
 
-## Available Scripts
+### Tópicos
 
-In the project directory, you can run:
+* [Descrição do Projeto](#descrição-do-projeto-page_facing_up)
+* [Deploy da Aplicação com Vercel](#deploy-da-aplicação-com-vercel-rocket)
+* [O que a Aplicação Faz](#o-que-a-aplicação-faz)
+* [Pré-requisitos](#pré-requisitos-warning)
+* [Dependências](#dependências-link)
+* [Como Rodar o Projeto de Forma Local](#como-rodar-o-projeto-de-forma-local-computer)
 
-### `yarn start`
+## Descrição do Projeto :page_facing_up:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> Status do Projeto: Concluido :heavy_check_mark:
 
-### `yarn test`
+Aplicação SPA com o objetivo de solidificar os conhecimentos em [**`ReactJS`**](https://reactjs.org/) com [**`TypeScript`**](https://www.typescriptlang.org/) e [**`styled-components`**](https://styled-components.com/) por meio da criação de componentes e consumo de API REST.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Deploy da Aplicação com Vercel  :rocket:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> https://dogs.sidy.dev  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## O que a Aplicação Faz
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ - Criar usuários
+ - Postar fotos
+ - Publicar comentários
+ - Visualizar estatísticas de acesso
+ - Autenticação JWT
 
-### `yarn eject`
+## Detalhes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Esse projeto foi desenvolvido no curso React Completo da [Origamid](https://www.origamid.com/curso/react-completo). Como forma de aprendizado adicional, fiz a adição do TypeScript e styled-components que não são usados no projeto original. A estrutura das pastas dos componentes também foi mudada.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Pré-requisitos :warning:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+:white_check_mark: [Node](https://nodejs.org/en/download/)
+:white_check_mark: [Yarn](https://yarnpkg.com/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Dependências :link:
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [styled-components](https://styled-components.com/)
+- [react-router-dom](https://reactrouter.com/)
+- [victory](https://formidable.com/open-source/victory/)
 
-## Learn More
+## Como Rodar o Projeto de Forma Local :computer:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+No terminal, clone o projeto:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+git clone https://github.com/sidyjw/dogs
+```
 
-### Code Splitting
+Entre na pasta do projeto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+cd dogs
+```
 
-### Analyzing the Bundle Size
+Instale as dependências:
+```
+yarn install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Execute a aplicação:
+```
+yarn start
+```
+Pronto, agora é possível acessar a aplicação a partir da rota  [http://localhost:3000/](http://localhost:3000/)
